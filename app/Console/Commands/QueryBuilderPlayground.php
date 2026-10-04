@@ -29,11 +29,11 @@ class QueryBuilderPlayground extends Command
         $categories = Category::query()->with('products')->get();
 
         foreach ($categories as $category) {
-            dump('Category name: ' . $category->name);
-            dump('Total products: ' . count($category->products));
+            dump('Category name: '.$category->name);
+            dump('Total products: '.count($category->products));
 
             foreach ($category->products as $product) {
-                dump('--- Product name: ' . $product->name);
+                dump('--- Product name: '.$product->name);
             }
 
             dump('--------------------------------------------');

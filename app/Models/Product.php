@@ -20,11 +20,11 @@ class Product extends Model
 
     public function getFormattedPriceAttribute()
     {
-        return number_format($this->price) . ' ' . $this->currency;
+        return number_format($this->price).' '.$this->currency;
     }
 
     public function getFormattedTotalAmount($quantity = 1)
     {
-        return number_format($this->price * $quantity) . ' ' . $this->currency;
+        return number_format($this->price * $quantity).' '.$this->currency;
     }
 }

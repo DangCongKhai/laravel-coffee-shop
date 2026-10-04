@@ -9,6 +9,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
+    protected $fillable = [
+        'name',
+        'description',
+    ];
+
     /** @use HasFactory<CategoryFactory> */
     use HasFactory;
 

@@ -24,7 +24,7 @@ class QueryBuilderPlayground extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(): void
     {
         $categories = Category::query()->with('products')->get();
 

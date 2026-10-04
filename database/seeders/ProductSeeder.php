@@ -4,12 +4,14 @@ namespace Database\Seeders;
 
 use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Collection;
 
 class ProductSeeder extends Seeder
 {
     public const DEFAULT_CURRENCY = 'VNĐ';
 
-    public $products = [
+    /** @var list<array{id: int, category_id: int, name: string, description: string, price: int, display_image_url: string}> */
+    public array $products = [
         [
             'id' => 1,
             'category_id' => 1,
@@ -108,7 +110,10 @@ class ProductSeeder extends Seeder
         ],
     ];
 
-    private function getProducts()
+    /**
+     * @return Collection<int, array{id: int, category_id: int, name: string, description: string, price: int, display_image_url: string}>
+     */
+    private function getProducts(): Collection
     {
         return collect($this->products);
     }

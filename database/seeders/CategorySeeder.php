@@ -7,7 +7,8 @@ use Illuminate\Database\Seeder;
 
 class CategorySeeder extends Seeder
 {
-    public $categories = [
+    /** @var list<array{id: int, name: string, description: string}> */
+    public array $categories = [
         [
             'id' => 1,
             'name' => 'Cafe',
@@ -20,7 +21,10 @@ class CategorySeeder extends Seeder
         ],
     ];
 
-    private function getCategories()
+    /**
+     * @return list<array{id: int, name: string, description: string}>
+     */
+    private function getCategories(): array
     {
         return $this->categories;
     }

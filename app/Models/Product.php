@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Product extends Model
-
 {
     protected $fillable = [
         'name',
@@ -34,11 +33,11 @@ class Product extends Model
 
     public function getFormattedPriceAttribute(): string
     {
-        return number_format($this->price) . ' ' . $this->currency;
+        return number_format($this->price).' '.$this->currency;
     }
 
     public function getFormattedTotalAmount(int $quantity = 1): string
     {
-        return number_format($this->price * $quantity) . ' ' . $this->currency;
+        return number_format($this->price * $quantity).' '.$this->currency;
     }
 }

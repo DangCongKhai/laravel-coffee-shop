@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Category;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Contracts\Database\Query\Builder;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $query = Category::query()
             ->when(request('search'), function (Builder $query, $search) {
-                return $query->where('name', 'like', '%' . $search);
+                return $query->where('name', 'like', '%'.$search);
             });
 
         return $query->simplePaginate();

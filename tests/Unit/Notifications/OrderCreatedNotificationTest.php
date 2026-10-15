@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Unit\Notifications;
 
 use App\Models\Cart;

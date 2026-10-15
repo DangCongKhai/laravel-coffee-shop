@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Events\OrderCreated;
 use App\Models\Order;
-use Illuminate\Http\Request;
 use App\Services\CartService;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 
 class CheckoutController extends Controller
 {

@@ -17,7 +17,7 @@ class UserServiceTest extends TestCase
     {
         parent::setUp();
 
-        $this->user_service = new UserService();
+        $this->user_service = new UserService;
     }
 
     private function storeRandomUserId()

@@ -2,12 +2,12 @@
 
 namespace Tests\Unit\Models;
 
-use Tests\TestCase;
 use App\Models\Cart;
+use App\Models\CartItem;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\CartItem;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class CartModelTest extends TestCase
 {
@@ -60,7 +60,7 @@ class CartModelTest extends TestCase
             ->has(CartItem::factory()->count(3), 'items')
             ->create();
 
-        $expected_formatted_total_amount = number_format($cart->total_amount) . ' ' . $cart->currency;
+        $expected_formatted_total_amount = number_format($cart->total_amount).' '.$cart->currency;
 
         $this->assertSame($expected_formatted_total_amount, $cart->formatted_total_amount);
     }

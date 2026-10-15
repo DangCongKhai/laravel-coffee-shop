@@ -2,10 +2,10 @@
 
 namespace Tests\Unit\Models;
 
-use Tests\TestCase;
-use App\Models\Product;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ProductModelTest extends TestCase
 {
@@ -22,7 +22,7 @@ class ProductModelTest extends TestCase
     {
         $product = Product::factory()->create();
 
-        $expected_results = number_format($product->price) . ' ' . $product->currency;
+        $expected_results = number_format($product->price).' '.$product->currency;
 
         $this->assertSame($expected_results, $product->formatted_price);
     }
@@ -33,7 +33,7 @@ class ProductModelTest extends TestCase
 
         $product = Product::factory()->create();
 
-        $expected_results = number_format($product->price * $quantity) . ' ' . $product->currency;
+        $expected_results = number_format($product->price * $quantity).' '.$product->currency;
 
         $this->assertSame($expected_results, $product->getFormattedTotalAmount($quantity));
     }

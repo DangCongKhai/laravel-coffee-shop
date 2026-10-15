@@ -2,12 +2,12 @@
 
 namespace App\Livewire\Checkout;
 
-use App\Models\Cart;
-use Illuminate\Contracts\View\View;
-use Livewire\Component;
 use App\Events\LivewireEvent;
+use App\Models\Cart;
 use App\Services\CartService;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Log;
+use Livewire\Component;
 
 class CartBar extends Component
 {
@@ -26,7 +26,7 @@ class CartBar extends Component
 
     public function loadingCartData(): void
     {
-        $cart = new CartService();
+        $cart = new CartService;
 
         $this->cart = $cart->getCart();
 
@@ -35,7 +35,7 @@ class CartBar extends Component
 
     public function removeCartItem($product_id): void
     {
-        $cart = new CartService();
+        $cart = new CartService;
 
         $cart->removeCartItem($product_id);
 

@@ -37,10 +37,10 @@ class OrderCreatedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
-            ->greeting('Dear ' . $this->order->full_name . ',')
-            ->subject('New Order Received | Code ' . $this->order->code)
+            ->greeting('Dear '.$this->order->full_name.',')
+            ->subject('New Order Received | Code '.$this->order->code)
             ->line('We are getting started on your order right away.')
-            ->line('Your Order Code is ' . $this->order->code)
+            ->line('Your Order Code is '.$this->order->code)
             ->action('See Order Confirmation', $this->order->getCheckoutConfirmtionPath())
             ->line('Thank you for using our application!');
     }
